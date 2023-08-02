@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+class Game extends StatefulWidget {
+  const Game({super.key});
+
+  @override
+  State<Game> createState() => _GameState();
+}
+
+class _GameState extends State<Game> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // color: Colors.black,
+      child: GridView.count(
+        crossAxisCount: 10,
+        children: List.generate(100, (index) {
+          return Center(
+            child: Text("D"),
+          );
+        }),
+      ),
+    );
+  }
+}

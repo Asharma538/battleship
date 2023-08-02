@@ -1,3 +1,4 @@
+import 'package:battleship/game.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -22,9 +23,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text("Battleship"),
         ),
-        body: Container(
-          color: Colors.black,
-        ),
+        body: Game(),
       ),
     );
   }
