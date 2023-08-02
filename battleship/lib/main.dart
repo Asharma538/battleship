@@ -1,7 +1,14 @@
+import 'package:battleship/game.dart';
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(const MyApp());
+  runApp(
+    MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.teal),
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    )
+  );
 }
 
 
@@ -15,10 +22,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.teal),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
           title: Text("Battleship"),
@@ -37,7 +41,12 @@ class _MyAppState extends State<MyApp> {
                       fontWeight: FontWeight.w700,
                     )
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Game()));
+                  },
                   child: Text("Create New Game"),
                 ),
               ),
@@ -58,7 +67,6 @@ class _MyAppState extends State<MyApp> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
