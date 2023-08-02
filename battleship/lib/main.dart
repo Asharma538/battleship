@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main(){
-  runApp(MaterialApp(MyApp()));
+  runApp(const MyApp());
 }
 
 
@@ -15,6 +15,17 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.teal),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Battleship"),
+        ),
+        body: Container(
+          color: Colors.black,
+        ),
+      ),
+    );
   }
 }
