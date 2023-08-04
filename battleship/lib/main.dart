@@ -1,3 +1,4 @@
+import 'package:battleship/arrange.dart';
 import 'package:battleship/game.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,12 @@ class _MyAppState extends State<MyApp> {
                         fontWeight: FontWeight.w700,
                       )
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Arrange()));
+                  },
                   child: Text("     Join a Game     "),
                 ),
               ),
